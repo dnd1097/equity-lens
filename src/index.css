@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F8F9FB;
+    color: #0F1C2E;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', system-ui, sans-serif;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-card shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-card-hover;
+  }
+
+  .metric-value {
+    @apply font-display font-bold text-navy-900;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-wider text-slategray-400;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 text-sm font-medium text-navy-900 bg-white border border-slategray-100
+           rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent
+           transition-all duration-150 placeholder:text-slategray-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-teal-500 hover:bg-teal-600
+           text-white text-sm font-semibold rounded-lg transition-all duration-150
+           shadow-sm hover:shadow-md active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 bg-white hover:bg-slategray-50
+           text-navy-900 text-sm font-medium rounded-lg border border-slategray-100
+           transition-all duration-150 shadow-sm;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-2 text-slategray-400 hover:text-navy-900
+           hover:bg-slategray-50 text-sm font-medium rounded-lg transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 text-red-500 hover:text-red-600
+           hover:bg-red-50 text-sm font-medium rounded-lg transition-all duration-150;
+  }
+}
+
+@layer utilities {
+  .gradient-teal {
+    background: linear-gradient(135deg, #14B8A6 0%, #0EA5E9 100%);
+  }
+
+  .gradient-track {
+    background: linear-gradient(to right, #CCFBF1 0%, #14B8A6 50%, #0EA5E9 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #14B8A6 0%, #0EA5E9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .number-transition {
+    transition: all 0.2s ease;
+  }
+}
+
+/* Custom Radix slider overrides */
+.custom-slider [data-radix-slider-track] {
+  background: #E2E8F0;
+  height: 6px;
+  border-radius: 9999px;
+}
+
+.custom-slider [data-radix-slider-range] {
+  background: linear-gradient(to right, #14B8A6, #0EA5E9);
+  border-radius: 9999px;
+}
+
+.custom-slider [data-radix-slider-thumb] {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 2.5px solid #14B8A6;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(20, 184, 166, 0.25);
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+}
+
+.custom-slider [data-radix-slider-thumb]:hover {
+  border-color: #0D9488;
+  box-shadow: 0 2px 10px rgba(20, 184, 166, 0.40);
+  transform: scale(1.1);
+}
+
+.custom-slider [data-radix-slider-thumb]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.3);
+}
+
+/* Large outcome slider */
+.outcome-slider [data-radix-slider-track] {
+  height: 10px;
+}
+
+.outcome-slider [data-radix-slider-thumb] {
+  width: 28px;
+  height: 28px;
+  border-width: 3px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
